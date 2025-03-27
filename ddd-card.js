@@ -80,9 +80,6 @@ export class DddCard extends DDDSuper(I18NMixin(LitElement)) {
         padding-right: 1rem;
         padding-top: 0.75rem;
         display:flex;
-        word-wrap: break-word;
-
-        overflow: hidden;
       }
 
       .buttonWrapper
