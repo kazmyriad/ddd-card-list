@@ -57,7 +57,8 @@ export class DddCardList extends DDDSuper(I18NMixin(LitElement)) {
   render() {
     return html`
 <div class="wrapper">
-  <h3><span>${this.t.title}:</span> ${this.title}</h3>
+  <ddd-card></ddd-card>
+  <ddd-card></ddd-card>
   <ddd-card></ddd-card>
   <slot></slot>
 </div>`;
