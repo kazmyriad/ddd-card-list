@@ -46,6 +46,7 @@ export class DddCardList extends DDDSuper(I18NMixin(LitElement)) {
       .wrapper {
         margin: var(--ddd-spacing-2);
         padding: var(--ddd-spacing-4);
+        display: flex;
       }
       h3 span {
         font-size: var(--ddd-card-list-label-font-size, var(--ddd-font-size-s));
@@ -57,6 +58,8 @@ export class DddCardList extends DDDSuper(I18NMixin(LitElement)) {
   render() {
     return html`
 <div class="wrapper">
+  <!-- Generally cards are THERE, work on screen sizing next - how 
+   to make it so when the screen hits a certain size, cards shift down? -->
   <ddd-card></ddd-card>
   <ddd-card></ddd-card>
   <ddd-card></ddd-card>

@@ -45,9 +45,15 @@ export class DddCard extends DDDSuper(I18NMixin(LitElement)) {
         margin: var(--ddd-spacing-2);
         padding: var(--ddd-spacing-4);
         background-color: var(--ddd-theme-default-slateMaxLight);
-        display: flex;
+        display: inline-flex;
+        position: relativ;
         border-radius: 8px;
         flex-direction: column;
+        min-width: 160px;
+        flex-wrap: nowrap;
+        padding: 0px;
+        box-shadow: 0px 4px 8px 0px #00032120;
+        
       }
 
       img
@@ -55,6 +61,7 @@ export class DddCard extends DDDSuper(I18NMixin(LitElement)) {
         max-width: 100%;
         height: auto;
         vertical-align: bottom;
+        border-radius: 8px 8px 0px 0px;
       }
 
       .divider
@@ -72,27 +79,47 @@ export class DddCard extends DDDSuper(I18NMixin(LitElement)) {
         padding-left: 1rem;
         padding-right: 1rem;
         padding-top: 0.75rem;
-        padding-bottom: 1.25rem;
+        display:flex;
+        word-wrap: break-word;
+
+        overflow: hidden;
       }
 
       .buttonWrapper
       {
-        display: lex;
+        display: flex;
       }
+
+      
 
       h2 {
         font-size: var(--ddd-card-list-label-font-size, var(--ddd-font-size-s));
         color: var(--ddd-theme-default-nittanyNavy);
         margin: 0;
-        max-width: 100%;
-        display:flex;
-        flex-direction: column;
+        position: absolute;
+        
       }
 
-      p{
+      .textBody{
         color: var(--ddd-theme-default-nittanyNavy);
+        position: relative;
+        margin-top: 15px;
         display:flex;
-        flex-direction: column;
+      }
+
+    
+
+      .buttonWrapper
+      {
+        text-align: center;
+        display:inline-block;
+        background-color: var(--ddd-theme-default-beaverBlue);
+        border-radius: 8px;
+        padding-top: 0.75rem;
+        padding-bottom: 0.75rem;
+        padding-left: 1.5rem;
+        padding-right: 1rem;
+        margin: 15px;
       }
     `];
   }
@@ -105,12 +132,15 @@ export class DddCard extends DDDSuper(I18NMixin(LitElement)) {
       <div class ="divider"></div>
       <div class = "bodyWrapper">
         <div class = "textWrapper">
-          <h2>Example Heading</h2>
-          <p>Example text, Lorem Ipsum be ba ba bo bu dum tissss</p>
+          <h2>Abington</h2>
+          <div class = "textBody">
+            <p>Close to Philadelphia, Penn State Abington’s suburban campus offers bachelor's degrees, athletics, and a diverse student community.</p>
+          </div>
         </div>
       </div>
       <div class = "buttonWrapper">
-        <a>helllo</a>
+        <a href="https://www.psu.edu/academics/campuses">Explore</a> 
+        <!-- ask - how to make link color different -->
       </div>
     </div>`;
   }
