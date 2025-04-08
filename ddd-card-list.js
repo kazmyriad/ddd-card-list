@@ -3,7 +3,7 @@
  * @license Apache-2.0, see LICENSE for full text.
  */
 import { LitElement, html, css } from "lit";
-import { DDDSuper } from "@haxtheweb/d-d-d/d-d-d.js";
+import { DDD } from "@haxtheweb/d-d-d/d-d-d.js";
 import { I18NMixin } from "@haxtheweb/i18n-manager/lib/I18NMixin.js";
 import "./ddd-card.js";
 
@@ -14,7 +14,7 @@ import "./ddd-card.js";
  * @demo index.html
  * @element ddd-card-list
  */
-export class DddCardList extends DDDSuper(I18NMixin(LitElement)) {
+export class DddCardList extends (I18NMixin(DDD)) {
 
   static get tag() {
     return "ddd-card-list";

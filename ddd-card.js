@@ -3,7 +3,7 @@
  * @license Apache-2.0, see LICENSE for full text.
  */
 import { LitElement, html, css } from "lit";
-import { DDDSuper } from "@haxtheweb/d-d-d/d-d-d.js";
+import { DDD } from "@haxtheweb/d-d-d/d-d-d.js";
 import { I18NMixin } from "@haxtheweb/i18n-manager/lib/I18NMixin.js";
 
 /**
@@ -12,7 +12,9 @@ import { I18NMixin } from "@haxtheweb/i18n-manager/lib/I18NMixin.js";
  * @demo index.html
  * @element ddd-card-list
  */
-export class DddCard extends DDDSuper(I18NMixin(LitElement)) {
+
+// How to extend just DDD
+export class DddCard extends (I18NMixin(DDD)) {
 
   static get tag() {
     return "ddd-card";
@@ -118,6 +120,9 @@ export class DddCard extends DDDSuper(I18NMixin(LitElement)) {
         padding-right: 1rem;
         margin: 15px;
       }
+      a:link, a:visited {
+        color: var(--ddd-theme-default-slateMaxLight);
+      }
     `];
   }
 
@@ -136,8 +141,7 @@ export class DddCard extends DDDSuper(I18NMixin(LitElement)) {
         </div>
       </div>
       <div class = "buttonWrapper">
-        <a href="https://www.psu.edu/academics/campuses">Explore</a> 
-        <!-- ask - how to make link color different -->
+        <a href="https://www.psu.edu/academics/campuses">DDD</a> 
       </div>
     </div>`;
   }
