@@ -23,7 +23,8 @@ export class DddCard extends (I18NMixin(DDD)) {
   constructor() {
     super();
     this.title = "";
-    this.link = "";
+    this.link = "https://imgs.search.brave.com/YTWLQODzw6AQWvo0DyVInZ2ORfrnwHee404gWeI6tyo/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9tdGVr/M2QuY29tL3dwLWNv/bnRlbnQvdXBsb2Fk/cy8yMDE4LzAxL2lt/YWdlLXBsYWNlaG9s/ZGVyLTUwMHg1MDAt/MzAweDMwMC5qcGc";
+    
   }
 
   // Lit reactive properties
@@ -31,7 +32,8 @@ export class DddCard extends (I18NMixin(DDD)) {
     return {
       ...super.properties,
       title: { type: String },
-      title: { type: String }
+      link: { type: String },
+      
     };
   }
 
@@ -51,11 +53,10 @@ export class DddCard extends (I18NMixin(DDD)) {
         padding: var(--ddd-spacing-4);
         background-color: var(--ddd-theme-default-slateMaxLight);
         display: inline-flex;
-        position: relative;
         border-radius: 8px;
+        max-width: 500px;
         flex-direction: column;
         min-width: 100px;
-        flex-wrap: nowrap;
         padding: 0px;
         box-shadow: 0px 4px 8px 0px #00032120;
         
@@ -63,8 +64,9 @@ export class DddCard extends (I18NMixin(DDD)) {
 
       img
       {
-        max-width: 100%;
-        vertical-align: bottom;
+        height: 200px;
+        object-fit: cover;
+        display: flex;
         border-radius: 8px 8px 0px 0px;
       }
 
@@ -74,6 +76,7 @@ export class DddCard extends (I18NMixin(DDD)) {
         border-bottom-width: 0px;
         border-color: var(--ddd-theme-default-nittanyNavy);
         border-style: solid;
+        display:flex;
       }
       
 
@@ -83,34 +86,37 @@ export class DddCard extends (I18NMixin(DDD)) {
         padding-left: 1rem;
         padding-right: 1rem;
         padding-top: 0.75rem;
-       
         margin-bottom: 10px;
+        display: flex;
       }
       
       h2 {
         font-size: var(--ddd-card-list-label-font-size, var(--ddd-font-size-s));
         color: var(--ddd-theme-default-nittanyNavy);
         margin: 0;
-        position: absolute;
+        position: fixed;
         height: 30px;
         overflow: hidden;
         text-overflow: ellipsis;
+        white-space:nowrap;
+        display: inline-block;
         
       }
 
       .textBody{
         color: var(--ddd-theme-default-nittanyNavy);
         margin-top: 40px;
-        
         height: 100px;
+        /* width: 200px; */
         overflow: hidden;
-        text-overflow: ellipsis;
+        /* text-overflow: ellipsis;
+        white-space: nowrap; */
+        display: inline-block;
       }
 
       .buttonWrapper
       {
         text-align: center;
-        display:inline-block;
         background-color: var(--ddd-theme-default-beaverBlue);
         border-radius: 8px;
         padding-top: 0.75rem;
@@ -129,20 +135,22 @@ export class DddCard extends (I18NMixin(DDD)) {
   render() {
     return html`
     <div class="wrapper">
-      <img src=${this.link}>
+      <img src="${this.link}">
+      <!-- Help with this it aint working ^-->
       <div class ="divider"></div>
       <div class = "bodyWrapper">
         <div class = "textWrapper">
           <!-- SET HEIGHT FOR ELEMENTS WITHIN WRAPPER -->
           <h2>${this.title}</h2>
           <div class = "textBody">
-            <slot>
-            </slot>
+            <slot></slot>
           </div>
         </div>
-      </div>
-      <div class = "buttonWrapper">
+
+        <div class = "buttonWrapper">
         <a href="https://www.psu.edu/academics/campuses">Explore ></a> 
+        </div>
+
       </div>
     </div>`;
   }

@@ -14,6 +14,10 @@ import "./ddd-card.js";
  * @demo index.html
  * @element ddd-card-list
  */
+
+// NEED HELP WITH:
+// 1.) - @MEDIA, how to scale
+// 2.) 
 export class DddCardList extends (I18NMixin(DDD)) {
 
   static get tag() {
@@ -63,10 +67,10 @@ export class DddCardList extends (I18NMixin(DDD)) {
   <ddd-card title="Abington" link="https://images.ctfassets.net/ni9rh5nu0d99/1paFaX2Dc7iHh9Z6K7mIim/1427b9970ff21dd9c8a770067638efc1/abington-02.jpg?fm=webp&w=1080&q=75">
     Close to Philadelphia, Penn State Abington’s suburban campus offers bachelor's degrees, athletics, and a diverse student community.
   </ddd-card>
-  <ddd-card title="Beaver">
+  <ddd-card title="Beaver" link="https://images.ctfassets.net/ni9rh5nu0d99/6oBUNrVTNPJaoE9ahnVX2E/2c655bdcf28befdf81d5a24248a9dca5/altoona-01.jpg?fm=webp&w=1080&q=75">
     Situated on one hundred acres, Penn State Beaver offers several bachelor's degrees, on-campus housing, and varsity sports, all within easy reach of Pittsburgh.
   </ddd-card>
-  <ddd-card title="Altoona">
+  <ddd-card title="Altoona" link="https://images.ctfassets.net/ni9rh5nu0d99/C6YPZMqHyRaPeRrVTun8k/1ca61866afa1b3d903944a38ea34cecc/beaver-01.jpg?fm=webp&w=1080&q=75">
     In central Pennsylvania close to University Park, Penn State Altoona offers the appeal of a small college with the prestige of a major research university.
   </ddd-card>
 </div>`;
