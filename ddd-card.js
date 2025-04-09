@@ -23,6 +23,7 @@ export class DddCard extends (I18NMixin(DDD)) {
   constructor() {
     super();
     this.title = "";
+    this.link = "";
   }
 
   // Lit reactive properties
@@ -30,6 +31,7 @@ export class DddCard extends (I18NMixin(DDD)) {
     return {
       ...super.properties,
       title: { type: String },
+      title: { type: String }
     };
   }
 
@@ -43,15 +45,16 @@ export class DddCard extends (I18NMixin(DDD)) {
         background-color: var(--ddd-theme-accent);
         font-family: var(--ddd-font-navigation);
       }
+
       .wrapper {
         margin: var(--ddd-spacing-2);
         padding: var(--ddd-spacing-4);
         background-color: var(--ddd-theme-default-slateMaxLight);
         display: inline-flex;
-        position: relativ;
+        position: relative;
         border-radius: 8px;
         flex-direction: column;
-        min-width: 160px;
+        min-width: 100px;
         flex-wrap: nowrap;
         padding: 0px;
         box-shadow: 0px 4px 8px 0px #00032120;
@@ -61,7 +64,6 @@ export class DddCard extends (I18NMixin(DDD)) {
       img
       {
         max-width: 100%;
-        height: auto;
         vertical-align: bottom;
         border-radius: 8px 8px 0px 0px;
       }
@@ -69,44 +71,41 @@ export class DddCard extends (I18NMixin(DDD)) {
       .divider
       {
         border-top-width: 12px;
-      border-bottom-width: 0px;
-      border-color: var(--ddd-theme-default-nittanyNavy);
-      border-style: solid;
+        border-bottom-width: 0px;
+        border-color: var(--ddd-theme-default-nittanyNavy);
+        border-style: solid;
       }
       
 
       .textWrapper
       {
-        display: flex;
+        
         padding-left: 1rem;
         padding-right: 1rem;
         padding-top: 0.75rem;
-        display:flex;
+       
+        margin-bottom: 10px;
       }
-
-      .buttonWrapper
-      {
-        display: flex;
-      }
-
       
-
       h2 {
         font-size: var(--ddd-card-list-label-font-size, var(--ddd-font-size-s));
         color: var(--ddd-theme-default-nittanyNavy);
         margin: 0;
         position: absolute;
+        height: 30px;
+        overflow: hidden;
+        text-overflow: ellipsis;
         
       }
 
       .textBody{
         color: var(--ddd-theme-default-nittanyNavy);
-        position: relative;
-        margin-top: 15px;
-        display:flex;
+        margin-top: 40px;
+        
+        height: 100px;
+        overflow: hidden;
+        text-overflow: ellipsis;
       }
-
-    
 
       .buttonWrapper
       {
@@ -130,18 +129,20 @@ export class DddCard extends (I18NMixin(DDD)) {
   render() {
     return html`
     <div class="wrapper">
-      <img src="https://images.ctfassets.net/ni9rh5nu0d99/1paFaX2Dc7iHh9Z6K7mIim/1427b9970ff21dd9c8a770067638efc1/abington-02.jpg?fm=webp&w=1080&q=75">
+      <img src=${this.link}>
       <div class ="divider"></div>
       <div class = "bodyWrapper">
         <div class = "textWrapper">
-          <h2>Abington</h2>
+          <!-- SET HEIGHT FOR ELEMENTS WITHIN WRAPPER -->
+          <h2>${this.title}</h2>
           <div class = "textBody">
-            <p>Close to Philadelphia, Penn State Abington’s suburban campus offers bachelor's degrees, athletics, and a diverse student community.</p>
+            <slot>
+            </slot>
           </div>
         </div>
       </div>
       <div class = "buttonWrapper">
-        <a href="https://www.psu.edu/academics/campuses">DDD</a> 
+        <a href="https://www.psu.edu/academics/campuses">Explore ></a> 
       </div>
     </div>`;
   }

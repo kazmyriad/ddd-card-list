@@ -60,10 +60,15 @@ export class DddCardList extends (I18NMixin(DDD)) {
 <div class="wrapper">
   <!-- Generally cards are THERE, work on screen sizing next - how 
    to make it so when the screen hits a certain size, cards shift down? -->
-  <ddd-card></ddd-card>
-  <ddd-card></ddd-card>
-  <ddd-card></ddd-card>
-  <slot></slot>
+  <ddd-card title="Abington" link="https://images.ctfassets.net/ni9rh5nu0d99/1paFaX2Dc7iHh9Z6K7mIim/1427b9970ff21dd9c8a770067638efc1/abington-02.jpg?fm=webp&w=1080&q=75">
+    Close to Philadelphia, Penn State Abington’s suburban campus offers bachelor's degrees, athletics, and a diverse student community.
+  </ddd-card>
+  <ddd-card title="Beaver">
+    Situated on one hundred acres, Penn State Beaver offers several bachelor's degrees, on-campus housing, and varsity sports, all within easy reach of Pittsburgh.
+  </ddd-card>
+  <ddd-card title="Altoona">
+    In central Pennsylvania close to University Park, Penn State Altoona offers the appeal of a small college with the prestige of a major research university.
+  </ddd-card>
 </div>`;
   }
 
