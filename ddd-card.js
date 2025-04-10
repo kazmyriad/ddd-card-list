@@ -3,7 +3,7 @@
  * @license Apache-2.0, see LICENSE for full text.
  */
 import { LitElement, html, css } from "lit";
-import { DDD } from "@haxtheweb/d-d-d/d-d-d.js";
+import { DDD, DDDPulseEffectSuper } from "@haxtheweb/d-d-d/d-d-d.js";
 import { I18NMixin } from "@haxtheweb/i18n-manager/lib/I18NMixin.js";
 
 /**
@@ -33,7 +33,7 @@ export class DddCard extends (I18NMixin(DDD)) {
       ...super.properties,
       title: { type: String },
       link: { type: String },
-      
+      dataPrimary: { type: String, reflect: true, attribute: 'data-primary'}
     };
   }
 
@@ -53,6 +53,7 @@ export class DddCard extends (I18NMixin(DDD)) {
         padding: var(--ddd-spacing-4);
         background-color: var(--ddd-theme-default-slateMaxLight);
         display: inline-flex;
+        flex-wrap: wrap;
         border-radius: 8px;
         max-width: 500px;
         flex-direction: column;
@@ -74,7 +75,8 @@ export class DddCard extends (I18NMixin(DDD)) {
       {
         border-top-width: 12px;
         border-bottom-width: 0px;
-        border-color: var(--ddd-theme-default-nittanyNavy);
+        border-color: var(--ddd-theme-primary);
+      
         border-style: solid;
         display:flex;
       }
@@ -94,7 +96,7 @@ export class DddCard extends (I18NMixin(DDD)) {
         font-size: var(--ddd-card-list-label-font-size, var(--ddd-font-size-s));
         color: var(--ddd-theme-default-nittanyNavy);
         margin: 0;
-        position: fixed;
+        position: absolute;
         height: 30px;
         overflow: hidden;
         text-overflow: ellipsis;
@@ -153,6 +155,86 @@ export class DddCard extends (I18NMixin(DDD)) {
 
       </div>
     </div>`;
+  }
+
+  static get haxProperties() {
+    return {
+      type: "element",
+      canScale: true,
+
+      canEditSource: true,
+      gizmo: {
+        title: "Call to action",
+        description: "A simple button with a link to take action.",
+        icon: "image:crop-16-9",
+        color: "orange",
+        tags: ["Layout", "marketing", "button", "link", "url", "design", "cta"],
+        handles: [
+          {
+            type: "link",
+            source: "link",
+            title: "label",
+          },
+        ],
+        meta: {
+          author: "HAXTheWeb core team",
+        },
+      },
+      settings: {
+        configure: [
+          {
+            property: "label",
+            title: "Label",
+            description: "Link label",
+            inputMethod: "textfield",
+            required: true,
+          },
+          {
+            property: "link",
+            title: "Link",
+            description: "Enter a link to any resource",
+            inputMethod: "haxupload",
+            noVoiceRecord: true,
+            noCamera: true,
+            required: true,
+          },
+          {
+            property: "accentColor",
+            title: "Accent Color",
+            description: "An optional accent color.",
+            inputMethod: "colorpicker",
+            icon: "editor:format-color-fill",
+          },
+          {
+            property: "hideIcon",
+            title: "Hide icon",
+            description: "Hide the icon used to accent text",
+            inputMethod: "boolean",
+          },
+        ],
+        advanced: [
+          {
+            property: "icon",
+            title: "Icon",
+            description: "Action link icon",
+            inputMethod: "iconpicker",
+          },
+        ],
+      },
+      saveOptions: {
+        unsetAttributes: ["colors", "element-visible"],
+      },
+      demoSchema: [
+        {
+          tag: "simple-cta",
+          properties: {
+            label: "Click to learn more",
+            link: "https://haxtheweb.org/",
+          },
+          content: "",
+        },
+      ],
+    };
   }
 
 }
