@@ -52,12 +52,13 @@ export class DddCard extends (I18NMixin(DDD)) {
         margin: var(--ddd-spacing-2);
         padding: var(--ddd-spacing-4);
         background-color: var(--ddd-theme-default-slateMaxLight);
+        max-width: 750px;
         display: flex;
         flex-wrap: wrap;
-        border-radius: 8px;
+        border-radius: var(--ddd-radius-sm);
         flex-direction: column;
-        padding: 0px;
-        max-width:2000px;
+        /* ^ DEFINITELY affecting it, but when inspecting the OG element it's there and it works? How?? */
+        padding: var(--ddd-spacing-0);
         
       }
 
@@ -66,13 +67,13 @@ export class DddCard extends (I18NMixin(DDD)) {
         height: 200px;
         object-fit: cover;
         
-        border-radius: 8px 8px 0px 0px;
+        border-radius:var(--ddd-spacing-2) var(--ddd-spacing-2) var(--ddd-spacing-0) var(--ddd-spacing-0);
       }
 
       .divider
       {
-        border-top-width: 12px;
-        border-bottom-width: 0px;
+        border-top-width: var(--ddd-border-size-lg);
+        border-bottom-width: var(--ddd-border-size-xs);
         border-color: var(--ddd-theme-primary);
         border-style: solid;
         display:flex;
@@ -82,33 +83,28 @@ export class DddCard extends (I18NMixin(DDD)) {
       .textWrapper
       {
         
-        padding-left: 1rem;
-        padding-right: 1rem;
-        padding-top: 0.75rem;
-        margin-bottom: 10px;
+        padding-left: var(--ddd-spacing-5);
+        padding-right: var(--ddd-spacing-5);
+        padding-top: var(--ddd-spacing-5);
+        margin-bottom: var(--ddd-spacing-3);
         display: flex;
       }
       
       h2 {
         font-size: var(--ddd-card-list-label-font-size, var(--ddd-font-size-s));
         color: var(--ddd-theme-default-nittanyNavy);
-        margin: 0;
+        margin: var(--ddd-spacing-0);
         position: absolute;
         height: 30px;
         overflow: hidden;
-        text-overflow: ellipsis;
-        white-space:nowrap;
         display: flex;
       }
 
       .textBody{
         color: var(--ddd-theme-default-nittanyNavy);
-        margin-top: 40px;
+        margin-top: var(--ddd-spacing-10);
         height: 100px;
-        /* width: 200px; */
         overflow: hidden;
-        /* text-overflow: ellipsis;
-        white-space: nowrap; */
         display: flex;
       }
 
@@ -116,12 +112,12 @@ export class DddCard extends (I18NMixin(DDD)) {
       {
         text-align: center;
         background-color: var(--ddd-theme-default-beaverBlue);
-        border-radius: 8px;
-        padding-top: 0.75rem;
-        padding-bottom: 0.75rem;
-        padding-left: 1.5rem;
-        padding-right: 1rem;
-        margin: 15px;
+        border-radius: var(--ddd-radius-sm);
+        padding-top:  var(--ddd-spacing-5);
+        padding-bottom:var(--ddd-spacing-5);
+        padding-left: var(--ddd-spacing-5);
+        padding-right: var(--ddd-spacing-5);
+        margin: var(--ddd-spacing-4);
         display: flex;
 
       }
