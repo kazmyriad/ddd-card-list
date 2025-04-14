@@ -44,11 +44,34 @@ export class DddCardList extends DDD {
         margin: var(--ddd-spacing-2);
         padding: var(--ddd-spacing-4);
         display: flex;
-        color: var(--ddd-data-primary-7)
+        flex-wrap: wrap;
+        
+      }
+      .cards
+      {
+        display: inline-flex;
       }
       h3 span {
         font-size: var(--ddd-card-list-label-font-size, var(--ddd-font-size-s));
       }
+
+      ::slotted(*){
+
+      }
+
+      /* @media(max-width: 700px)
+      {
+        .wrapper {
+        margin: var(--ddd-spacing-2);
+        padding: var(--ddd-spacing-4);
+        display: flex;
+      }
+      .cards
+      {
+        display: inline-flex;
+        max-width: 500px;
+      }
+      } */
       
     `];
   }
@@ -57,9 +80,11 @@ export class DddCardList extends DDD {
   render() {
     return html`
       <div class="wrapper">
-        <slot class="cards">
+        <div class="cards">
+          <slot>
 
-        </slot>
+          </slot>
+        </div>
         </div>`;
   }
 

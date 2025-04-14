@@ -52,14 +52,12 @@ export class DddCard extends (I18NMixin(DDD)) {
         margin: var(--ddd-spacing-2);
         padding: var(--ddd-spacing-4);
         background-color: var(--ddd-theme-default-slateMaxLight);
-        display: inline-flex;
+        display: flex;
         flex-wrap: wrap;
         border-radius: 8px;
-        max-width: 500px;
         flex-direction: column;
-        min-width: 100px;
         padding: 0px;
-        box-shadow: 0px 4px 8px 0px #00032120;
+        max-width:2000px;
         
       }
 
@@ -67,7 +65,7 @@ export class DddCard extends (I18NMixin(DDD)) {
       {
         height: 200px;
         object-fit: cover;
-        display: flex;
+        
         border-radius: 8px 8px 0px 0px;
       }
 
@@ -76,7 +74,6 @@ export class DddCard extends (I18NMixin(DDD)) {
         border-top-width: 12px;
         border-bottom-width: 0px;
         border-color: var(--ddd-theme-primary);
-      
         border-style: solid;
         display:flex;
       }
@@ -101,8 +98,7 @@ export class DddCard extends (I18NMixin(DDD)) {
         overflow: hidden;
         text-overflow: ellipsis;
         white-space:nowrap;
-        display: inline-block;
-        
+        display: flex;
       }
 
       .textBody{
@@ -113,7 +109,7 @@ export class DddCard extends (I18NMixin(DDD)) {
         overflow: hidden;
         /* text-overflow: ellipsis;
         white-space: nowrap; */
-        display: inline-block;
+        display: flex;
       }
 
       .buttonWrapper
@@ -126,6 +122,8 @@ export class DddCard extends (I18NMixin(DDD)) {
         padding-left: 1.5rem;
         padding-right: 1rem;
         margin: 15px;
+        display: flex;
+
       }
       a:link, a:visited {
         color: var(--ddd-theme-default-slateMaxLight);
