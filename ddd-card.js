@@ -53,8 +53,9 @@ export class DddCard extends (I18NMixin(DDD)) {
         padding: var(--ddd-spacing-4);
         background-color: var(--ddd-theme-default-slateMaxLight);
         max-width: 750px;
+        
         display: flex;
-        flex-wrap: wrap;
+        flex-wrap: nowrap;
         border-radius: var(--ddd-radius-sm);
         flex-direction: column;
         /* ^ DEFINITELY affecting it, but when inspecting the OG element it's there and it works? How?? */
@@ -66,7 +67,6 @@ export class DddCard extends (I18NMixin(DDD)) {
       {
         height: 200px;
         object-fit: cover;
-        
         border-radius:var(--ddd-spacing-2) var(--ddd-spacing-2) var(--ddd-spacing-0) var(--ddd-spacing-0);
       }
 
@@ -121,8 +121,16 @@ export class DddCard extends (I18NMixin(DDD)) {
         display: flex;
 
       }
+      
+      a
+      {
+        background-color: var(--ddd-theme-default-beaverBlue);
+      }
+      
       a:link, a:visited {
         color: var(--ddd-theme-default-slateMaxLight);
+        background-color: var(--ddd-theme-default-beaverBlue);
+
       }
     `];
   }
