@@ -55,7 +55,7 @@ export class DddCard extends (I18NMixin(DDD)) {
         max-width: 750px;
         
         display: flex;
-        flex-wrap: nowrap;
+        flex-wrap: wrap;
         border-radius: var(--ddd-radius-sm);
         flex-direction: column;
         /* ^ DEFINITELY affecting it, but when inspecting the OG element it's there and it works? How?? */
@@ -126,7 +126,7 @@ export class DddCard extends (I18NMixin(DDD)) {
       {
         background-color: var(--ddd-theme-default-beaverBlue);
       }
-      
+
       a:link, a:visited {
         color: var(--ddd-theme-default-slateMaxLight);
         background-color: var(--ddd-theme-default-beaverBlue);
